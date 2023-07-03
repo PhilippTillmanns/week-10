@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
+import {getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUjUTa1VRuqDWXnjMweVAH_nd0HNwowzw",
@@ -11,7 +11,8 @@ const firebaseConfig = {
   measurementId: "G-43PH0C3VMY"
 };
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
 
 export const isLoggedIn = true;

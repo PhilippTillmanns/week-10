@@ -8,6 +8,7 @@ function App() {
     return (
       <div>
         <h1>Logged In!</h1>
+        <Login></Login>
       </div>
     );
   }else{
@@ -20,15 +21,6 @@ function App() {
 
   return (
     <div className="App">
-
-
-
-      
-      <div>
-        <Landing></Landing>
-      </div>
-
-
     </div>
   );
 }
