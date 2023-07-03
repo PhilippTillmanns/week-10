@@ -1,4 +1,5 @@
 import Login from "./components/Login";
+import Landing from "./pages/landing";
 
 
 function App() {
@@ -7,7 +8,15 @@ function App() {
       <h1 className="font-bold text-green-800 text-[50px]"
       >Hello World!</h1>
 
-      <Login></Login>
+      <div>
+        <h1>Main Page</h1>
+      </div>
+
+      <div>
+        <Landing></Landing>
+      </div>
+
+
     </div>
   );
 }
