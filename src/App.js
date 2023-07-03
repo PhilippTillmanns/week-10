@@ -1,20 +1,18 @@
-import Login from "./components/Login";
 import Landing from "./pages/landing";
-import { isLoggedIn } from "./config/firebase";
+import { auth } from "./config/firebase";
 
 function App() {
 
-  if(isLoggedIn == true){
+  if(true){
     return (
       <div>
-        <h1>Logged In!</h1>
-        <Login></Login>
+        <Landing/>
       </div>
     );
   }else{
     return(
       <div>
-        <Landing/>  
+      <h1>Not Logged in!</h1>
       </div>
     )
   }
