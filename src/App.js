@@ -1,26 +1,30 @@
 import Landing from "./pages/landing";
 import { auth } from "./config/firebase";
+import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import Cookies from 'universal-cookie';
+import Home from "./pages/home";
+const cookies = new Cookies();
 
 function App() {
 
-  if(true){
+  const [user] = useAuthState(auth);
+
+  if(!user){
     return (
       <div>
         <Landing/>
       </div>
     );
-  }else{
+  }
+  else{
     return(
       <div>
-      <h1>Not Logged in!</h1>
+        <Home></Home>
       </div>
-    )
+    );
   }
-
-  return (
-    <div className="App">
-    </div>
-  );
 }
 
 export default App;
