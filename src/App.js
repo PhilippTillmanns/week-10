@@ -13,7 +13,7 @@ function App() {
   }else{
     return(
       <div>
-        <h1>Logged Out!</h1>
+        <Landing/>  
       </div>
     )
   }
