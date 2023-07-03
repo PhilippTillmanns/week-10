@@ -15,4 +15,4 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 
-export const isLoggedIn = true;
+export const isLoggedIn = false;
