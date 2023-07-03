@@ -1,5 +1,6 @@
 import React from 'react'
 import { SignInWithGoogle } from '../components/SignInWithGoogle'
+import image from "../img/landing-Page-bg.jpg"
 
 function Landing() {
   const imageURL = "https://images.pexels.com/photos/4203100/pexels-photo-4203100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
