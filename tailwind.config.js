@@ -21,6 +21,8 @@ module.exports = {
       'clrLightBlue': '#324a5f',
       'clrLightPurple': '#ccc9dc',
       'clrEggshell': '#d3c6bd',
+      'clrOrange': '#FF6F1E',
+      'clrPink': '#FF2CAA',
       
     },
   },
