@@ -1,7 +1,5 @@
 import { doc, setDoc, getDoc} from "firebase/firestore"; 
-import { db } from "../config/firebase";
-import { auth } from "../config/firebase";
-import { activeUser } from "../config/firebase";
+import { activeUser, auth, db} from "../config/firebase";
 
 export const CreateUserInformation = async () =>{
     await setDoc(doc(db, "users", auth.currentUser.uid), {

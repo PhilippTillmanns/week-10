@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
 import { SignOut } from '../components/HandleLoginAndLogout'
-import './pages-css/home.css';
-import { activeUser } from '../config/firebase';
 import GetUserData from '../components/HandleUserInformation';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { activeUser } from '../config/firebase';
+import './pages-css/home.css';
 
 function Home() {
 
