@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { activeUser } from '../config/firebase';
 import './pages-css/home.css';
 import LoadingScreen from './loadingScreen';
-
+import CreateUser from './CreateUser';
 
 function Home() {
 
