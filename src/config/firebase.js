@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUjUTa1VRuqDWXnjMweVAH_nd0HNwowzw",
@@ -15,3 +16,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
+
+export const db = getFirestore(app);
+
+
+class User {
+  constructor(username, personality){
+    this.username = username;
+    this.personality = personality;
+  }
+}
+
+export var activeUser = new User("none", "none");
