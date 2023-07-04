@@ -1,7 +1,7 @@
 import Landing from "./pages/landing";
 import { auth } from "./config/firebase";
-import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+
 
 import Cookies from 'universal-cookie';
 import Home from "./pages/home";
