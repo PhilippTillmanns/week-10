@@ -3,6 +3,8 @@ import GetUserData from '../components/HandleUserInformation';
 import React, { useEffect, useState } from 'react'
 import { activeUser } from '../config/firebase';
 import './pages-css/home.css';
+import LoadingScreen from './loadingScreen';
+
 
 function Home() {
 
@@ -15,7 +17,7 @@ function Home() {
     if(isLoading){
       return(
         <div>
-        Is Loading...
+          <LoadingScreen/>
       </div>
       )
       

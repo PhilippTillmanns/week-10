@@ -1,11 +1,12 @@
 import React from 'react'
+import LoadingSpinner from '../components/loadingSpinner'
 
-function loadingScreen() {
+function LoadingScreen() {
   return (
-    <div className=' justify-center bg-purple'>
-        <loadingScreen/>
+    <div className='flex items-center justify-center bg-clrMidBlue h-screen w-screen'>
+        <LoadingSpinner/>
     </div>
   )
 }
 
-export default loadingScreen
+export default LoadingScreen
