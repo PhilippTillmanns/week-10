@@ -1,11 +1,15 @@
 import React from 'react'
 import { SignOut } from '../components/HandleLoginAndLogout'
+import './pages-css/home.css';
 
 function Home() {
   return (
-    <div>
-        <h1>Logged In!</h1>
+    <div class="firstSignIn-bg" >
+        <div >Hello</div>
+        
         <button onClick={() => SignOut()}>Sign Out</button>
+
+        <div className=''></div>
     </div>
   )
 }
