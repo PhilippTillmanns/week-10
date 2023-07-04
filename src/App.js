@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import Cookies from 'universal-cookie';
 import Home from "./pages/home";
+import GetUserData from "./components/HandleUserInformation";
 const cookies = new Cookies();
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     );
   }
   else{
+    GetUserData();
     return(
       <div>
         <Home></Home>

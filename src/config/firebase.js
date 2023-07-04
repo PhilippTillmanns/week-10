@@ -26,5 +26,3 @@ class User {
     this.personality = personality;
   }
 }
-
-export var activeUser = new User("none", "none");

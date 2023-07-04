@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { SignOut } from '../components/HandleLoginAndLogout'
 import './pages-css/home.css';
+import { useState } from 'react';
 
 function Home() {
+
+ 
+
       return (
         <div>
             <h1>Logged In!</h1>
