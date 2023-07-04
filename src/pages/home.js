@@ -1,27 +1,40 @@
 import React, { useEffect } from 'react'
 import { SignOut } from '../components/HandleLoginAndLogout'
 import './pages-css/home.css';
+import { activeUser } from '../config/firebase';
+import GetUserData from '../components/HandleUserInformation';
 import { useState } from 'react';
 
 function Home() {
 
- 
+    const [isLoading, setIsLoading] = useState(true);
 
-      return (
+    useEffect(() => {
+      GetUserData().then(() => setIsLoading(false));
+    });
+ 
+    if(isLoading){
+      return(
         <div>
-            <h1>Logged In!</h1>
-            <button onClick={() => SignOut()}>Sign Out</button>
+        Is Loading...
+      </div>
+      )
+      
+    }else{
+      return(
+        <div class="firstSignIn-bg" >
+          <h1>Logged In as: {activeUser.username}</h1>
+          <h1>Personality: {activeUser.personality}</h1>
+          <button onClick={() => SignOut()}>Sign Out</button>
         </div>
       )
-  return (
-    <div class="firstSignIn-bg" >
-        <div >Hello</div>
-        
-        <button onClick={() => SignOut()}>Sign Out</button>
-
-        <div className=''></div>
-    </div>
-  )
+    }
 }
 
 export default Home
+
+
+/*
+
+ 
+  */

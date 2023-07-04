@@ -14,6 +14,8 @@ async function GetUserData(){
 
     const docRef = doc(db, "users", auth.currentUser.uid);
     const docSnap = await getDoc(docRef);
+    activeUser.username = docSnap.data().username;
+    activeUser.personality = docSnap.data().personality;
 }
 
 export default GetUserData
