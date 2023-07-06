@@ -1,17 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import image from "../images/pexels-alex-conchillos-3745234.jpg"
 import './pages-css/home.css'
+import GetUserData, { CreateUserInformation } from '../components/HandleUserInformation';
+import { activeUser } from '../config/firebase';
 
 
-function CreateUser() {
+function CreateUser({setIsCreatingUser}) {
+
+  function GetUserInputs () {
+    const createdUsername = document.getElementById("inputElement").value;
+    const createdPersonalityType = document.getElementById("typeElement").value;
+    let canBeCreated = true;
+
+
+    if(createdUsername.length <= 0 || createdUsername.length > 10){
+      alert("Your username is either too long or too short!")
+      canBeCreated = false;
+    }
+    if(createdUsername == null || createdPersonalityType == null){
+      canBeCreated = false;
+    }
+
+    if(canBeCreated){
+      CreateUserInformation({username: createdUsername, personality: createdPersonalityType}).then(() => setIsCreatingUser(false));
+    }
+  }
+
+
   return (
     <div className=' h-screen bg-cover text-white flex justify-center items-center' style={{ backgroundImage:`url(${image})`}} >
         <div className=' rounded-xl p-7 pb-14 flex justify-center items-center bg-gradient-to-br from-clrOrange to-clrPink'>
             <div className='relative'>
                 <div className='font-bold text-2xl my-1'>What should we call you?</div>
-                <input className='font-[font-weight: 500] pl-4 w-full leading-10 rounded-[0.5rem] ] text-clrMidBlue'></input>
+                <input id='inputElement' className='font-[font-weight: 500] pl-4 w-full leading-10 rounded-[0.5rem] ] text-clrMidBlue'></input>
                 <div className='font-bold  mt-3 text-2xl'>What type fits best?</div>
-                <select class="selector">select a type
+                <select id="typeElement" className="selector">select a type
                   <option value={"helper"}>Helper</option>
                   <option>Challenger</option>
                   <option>Peacemaker</option>
@@ -20,7 +43,7 @@ function CreateUser() {
                   <option>Reformer</option>
                 </select>
                 
-                <button className=' hover:underline absolute right-0 bottom-[-40px] font-semibold'>Submit</button>
+                <button className=' hover:underline absolute right-0 bottom-[-40px] font-semibold' onClick={() => GetUserInputs()}>Submit</button>
                 
             </div>
             

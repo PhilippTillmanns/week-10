@@ -1,18 +1,22 @@
 import { doc, setDoc, getDoc} from "firebase/firestore"; 
 import { activeUser, auth, db} from "../config/firebase";
 
-export const CreateUserInformation = async () =>{
+export const CreateUserInformation = async (props) =>{
     await setDoc(doc(db, "users", auth.currentUser.uid), {
-      username: auth.currentUser.displayName,
-      personality: ""
-    });
+      username: props.username,
+      personality: props.personality,
+    }).then(() => GetUserData());
+    
 }
 
 async function GetUserData(){
     const docRef = doc(db, "users", auth.currentUser.uid);
     const docSnap = await getDoc(docRef);
-    activeUser.username = docSnap.data().username;
-    activeUser.personality = docSnap.data().personality;
+    if(docSnap.data() != null){
+      activeUser.username = docSnap.data().username;
+      activeUser.personality = docSnap.data().personality;
+    }
+    
 }
 
 export default GetUserData

@@ -26,4 +26,4 @@ class User {
   }
 }
 
-export const activeUser = new User("none", "none"); 
+export const activeUser = new User(null, null); 
