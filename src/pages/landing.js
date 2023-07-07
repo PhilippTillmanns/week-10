@@ -4,7 +4,7 @@ import { SignInWithGoogle } from '../components/HandleLoginAndLogout'
 
 function Landing() {
   const imageURL = "https://images.pexels.com/photos/4203100/pexels-photo-4203100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-  
+
   return (
     <div className="text-center bg-cover bg-center h-screen flex items-center" style={{ backgroundImage:`url(${image})`}}  >
       <div className="text-left fixed left-[10%] w-7/12">

@@ -10,6 +10,7 @@ export const SignInWithGoogle = async () => {
 };
 
 export const SignOut = async () => {
+        console.log("Trying to sign out!");
         try{
                 await signOut(auth);
                 activeUser.username = null;
