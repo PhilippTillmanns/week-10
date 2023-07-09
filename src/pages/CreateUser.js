@@ -62,12 +62,3 @@ function CreateUser({setIsCreatingUser}) {
 }
 
 export default CreateUser
-
-/*
-- placeholder for select person type:
-<div className=' w-100 py-2 my-1 text-metal rounded-md bg-white'> <span className='ml-2 text-1xl'>select type</span></div>
-
-
-- placeholder for username textfield:
-<div className=' w-100  py-2 text-metal rounded-md bg-white'><span className='ml-2 text-1xl'> username here...</span></div>
-*/

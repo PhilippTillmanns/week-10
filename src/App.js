@@ -15,14 +15,6 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState("")
 
-  //Detect if the user has already clicked on the button :)
-  /*
-  const [clickedButton, setClickedButton] = useState(false);
-  function ChangeClickedButton(change){
-    setClickedButton(change);
-  }
-  */
-
   function LoadPage(url){
     const nextWebsite = baseUrl + url;
     if(currentPage != nextWebsite){
